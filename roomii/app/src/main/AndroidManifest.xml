@@ -19,6 +19,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".DisplayProfileActivity" />
+        <activity android:name="com.example.roomii.LoginActivity" android:theme="@style/AppTheme.Dark" />
+        <activity android:name="com.example.roomii.SignupActivity" android:theme="@style/AppTheme.Dark" />
+
     </application>
 
 </manifest>
