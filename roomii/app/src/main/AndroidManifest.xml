@@ -3,12 +3,22 @@
     package="com.example.roomii">
 
     <application
+
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity
+            android:name=".ProfileEditActivity"
+            android:label="@string/title_activity_profile_edit"
+            android:parentActivityName=".SignupActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.roomii.SignupActivity" />
+        </activity>
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name">
@@ -18,8 +28,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.example.roomii.LoginActivity" android:theme="@style/AppTheme.Dark" />
-        <activity android:name="com.example.roomii.SignupActivity" android:theme="@style/AppTheme.Dark" />
+        <activity
+            android:name=".LoginActivity"
+            android:theme="@style/AppTheme.Dark" />
+        <activity
+            android:name=".SignupActivity"
+            android:theme="@style/AppTheme.Dark" />
+
     </application>
 
 </manifest>
