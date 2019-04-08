@@ -11,31 +11,31 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
 
-    private TextView mTextMessage;
-
-    private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
-        = new BottomNavigationView.OnNavigationItemSelectedListener() {
-
-    @Override
-    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.navigation_explore:
-//                startActivity(new Intent(MainActivity.this, Explore.class));
-                mTextMessage.setText(R.string.title_home);
-                return true;
-            case R.id.navigation_dashboard:
-                mTextMessage.setText(R.string.title_dashboard);
-                return true;
-            case R.id.navigation_notifications:
-                mTextMessage.setText(R.string.title_notifications);
-                return true;
-            case R.id.navigation_profile:
-                mTextMessage.setText("Profile");
-                return true;
-        }
-        return false;
-    }
-};
+//    private TextView mTextMessage;
+//
+//    private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
+//        = new BottomNavigationView.OnNavigationItemSelectedListener() {
+//
+//        @Override
+//        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+//            switch (item.getItemId()) {
+//                case R.id.navigation_explore:
+//    //                startActivity(new Intent(MainActivity.this, Explore.class));
+//                    mTextMessage.setText(R.string.title_home);
+//                    return true;
+//                case R.id.navigation_dashboard:
+//                    mTextMessage.setText(R.string.title_dashboard);
+//                    return true;
+//                case R.id.navigation_notifications:
+//                    mTextMessage.setText(R.string.title_notifications);
+//                    return true;
+//                case R.id.navigation_profile:
+//                    mTextMessage.setText("Profile");
+//                    return true;
+//            }
+//            return false;
+//        }
+//    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,10 +67,18 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
             case R.id.navigation_explore:
                 fragment = new ExploreFragment();
                 break;
-//
-//            case R.id.navigation_favorites:
-//                fragment = new ExploreFragment();
-//                break;
+
+            case R.id.navigation_favorites:
+                fragment = new FavoritesFragment();
+                break;
+
+            case R.id.navigation_messages:
+                fragment = new MessagesFragment();
+                break;
+
+            case R.id.navigation_profile:
+                fragment = new ProfileFragment();
+                break;
         }
         return loadFragment(fragment);
     }
