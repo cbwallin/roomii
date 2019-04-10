@@ -8,10 +8,413 @@
     tools:context=".ProfileEditActivity"
     tools:showIn="@layout/activity_profile_edit">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/text_margin"
-        android:text="@string/large_text" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingTop="16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/text_margin"
+            android:textStyle="bold"
+            android:textSize="@dimen/profile_edit_text_section_heading_size"
+            android:text="@string/personal_settings"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/text_margin"
+            android:textSize="@dimen/profile_edit_text_option_heading_size"
+            android:text="@string/bio"/>
+
+        <EditText
+            android:id="@+id/bio_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/text_margin"
+            android:hint="@string/bio_hint"
+            android:inputType="text" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/text_margin"
+            android:textSize="@dimen/profile_edit_text_option_heading_size"
+            android:text="@string/birth_date"/>
+
+
+        <EditText
+            android:id="@+id/birth_date_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/text_margin"
+            android:hint="Enter your birth date like MM/DD/YYYY"
+            android:inputType="text" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/text_margin"
+            android:textSize="@dimen/profile_edit_text_option_heading_size"
+            android:text="@string/phone_number"/>
+
+
+        <EditText
+            android:id="@+id/phone_number_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/text_margin"
+            android:hint="Ex: 1234567890"
+            android:inputType="phone" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/text_margin"
+            android:textSize="@dimen/profile_edit_text_option_heading_size"
+            android:text="@string/email"/>
+
+
+        <EditText
+            android:id="@+id/email_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/text_margin"
+            android:hint="Ex: sup@dude.com"
+            android:inputType="textEmailAddress" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/text_margin"
+            android:textSize="@dimen/profile_edit_text_option_heading_size"
+            android:text="@string/password"/>
+
+
+        <EditText
+            android:id="@+id/password_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/text_margin"
+            android:hint="New Password"
+            android:inputType="textPassword" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/text_margin"
+            android:textStyle="bold"
+            android:textSize="@dimen/profile_edit_text_section_heading_size"
+            android:text="@string/quiz"/>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="left|center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/text_margin"
+                android:textSize="@dimen/profile_edit_quiz_items"
+                android:text="@string/gender_preference" />
+            <Spinner
+                android:id="@+id/gender_spinner"
+                android:layout_width="wrap_content"
+                android:textSize="@dimen/profile_edit_quiz_items"
+                android:layout_height="match_parent"></Spinner>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="left|center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/text_margin"
+                android:textSize="@dimen/profile_edit_quiz_items"
+                android:text="@string/preferred_age" />
+            <EditText
+                android:id="@+id/roommate_age_input"
+                android:layout_width="wrap_content"
+                android:textSize="@dimen/profile_edit_quiz_items"
+                android:hint="enter roommate age"
+                android:layout_height="match_parent"
+                android:inputType="number"></EditText>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="left|center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/text_margin"
+                android:textSize="@dimen/profile_edit_quiz_items"
+                android:text="@string/workout_habits" />
+            <SeekBar
+                android:id="@+id/workout_input"
+                android:layout_width="180dp"
+                android:layout_height="match_parent"
+                android:max="4"
+                android:thumb="@android:drawable/ic_menu_mylocation"
+                android:theme="@style/Widget.AppCompat.SeekBar.Discrete"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="left|center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/text_margin"
+                android:textSize="@dimen/profile_edit_quiz_items"
+                android:text="@string/political_affiliation" />
+            <Spinner
+                android:id="@+id/political_spinner"
+                android:layout_width="wrap_content"
+                android:textSize="@dimen/profile_edit_quiz_items"
+                android:layout_height="match_parent"></Spinner>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="left|center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/text_margin"
+                android:textSize="@dimen/profile_edit_quiz_items"
+                android:text="@string/personality_traits" />
+            <EditText
+                android:id="@+id/personality_trait_input"
+                android:layout_width="wrap_content"
+                android:textSize="@dimen/profile_edit_quiz_items"
+                android:hint="Enter traits separated by ,"
+                android:layout_height="match_parent"
+                android:inputType="text"></EditText>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="left|center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/text_margin"
+                android:textSize="@dimen/profile_edit_quiz_items"
+                android:text="@string/cleanliness" />
+            <SeekBar
+                android:id="@+id/cleanliness_input"
+                android:layout_width="180dp"
+                android:layout_height="match_parent"
+                android:max="4"
+                android:thumb="@android:drawable/ic_menu_mylocation"
+                android:theme="@style/Widget.AppCompat.SeekBar.Discrete"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="left|center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/text_margin"
+                android:textSize="@dimen/profile_edit_quiz_items"
+                android:text="@string/sleep_time" />
+            <Spinner
+                android:id="@+id/sleep_time_spinner"
+                android:layout_width="wrap_content"
+                android:textSize="@dimen/profile_edit_quiz_items"
+                android:layout_height="match_parent"></Spinner>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="left|center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/text_margin"
+                android:textSize="@dimen/profile_edit_quiz_items"
+                android:text="@string/rel_status" />
+            <Spinner
+                android:id="@+id/relationship_spinner"
+                android:layout_width="wrap_content"
+                android:textSize="@dimen/profile_edit_quiz_items"
+                android:layout_height="match_parent"></Spinner>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="left|center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/text_margin"
+                android:textSize="@dimen/profile_edit_quiz_items"
+                android:text="@string/extroversion" />
+            <Spinner
+                android:id="@+id/extroversion_spinner"
+                android:layout_width="wrap_content"
+                android:textSize="@dimen/profile_edit_quiz_items"
+                android:layout_height="match_parent"></Spinner>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="left|center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/text_margin"
+                android:textSize="@dimen/profile_edit_quiz_items"
+                android:text="@string/housing_type" />
+            <Spinner
+                android:id="@+id/housing_spinner"
+                android:layout_width="wrap_content"
+                android:textSize="@dimen/profile_edit_quiz_items"
+                android:layout_height="match_parent"></Spinner>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="left|center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/text_margin"
+                android:textSize="@dimen/profile_edit_quiz_items"
+                android:text="@string/religious_affiliation" />
+            <Spinner
+                android:id="@+id/religion_spinner"
+                android:layout_width="wrap_content"
+                android:textSize="@dimen/profile_edit_quiz_items"
+                android:layout_height="match_parent"></Spinner>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="left|center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/text_margin"
+                android:textSize="@dimen/profile_edit_quiz_items"
+                android:text="@string/religiousity" />
+            <SeekBar
+                android:id="@+id/religiousity_input"
+                android:layout_width="180dp"
+                android:layout_height="match_parent"
+                android:max="4"
+                android:thumb="@android:drawable/ic_menu_mylocation"
+                android:theme="@style/Widget.AppCompat.SeekBar.Discrete"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="left|center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/text_margin"
+                android:textSize="@dimen/profile_edit_quiz_items"
+                android:text="@string/food_habits" />
+            <Spinner
+                android:id="@+id/food_spinner"
+                android:layout_width="wrap_content"
+                android:textSize="@dimen/profile_edit_quiz_items"
+                android:layout_height="match_parent"></Spinner>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="left|center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/text_margin"
+                android:textSize="@dimen/profile_edit_quiz_items"
+                android:text="@string/party_habits" />
+            <SeekBar
+                android:id="@+id/party_input"
+                android:layout_width="180dp"
+                android:layout_height="match_parent"
+                android:max="4"
+                android:thumb="@android:drawable/ic_menu_mylocation"
+                android:theme="@style/Widget.AppCompat.SeekBar.Discrete"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="left|center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/text_margin"
+                android:textSize="@dimen/profile_edit_quiz_items"
+                android:text="@string/hobbies" />
+            <EditText
+                android:id="@+id/hobbies_input"
+                android:layout_width="wrap_content"
+                android:textSize="@dimen/profile_edit_quiz_items"
+                android:hint="Enter hobbies separated by ,"
+                android:layout_height="match_parent"
+                android:inputType="text"></EditText>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="left|center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/text_margin"
+                android:textSize="@dimen/profile_edit_quiz_items"
+                android:text="@string/desired_city" />
+            <EditText
+                android:id="@+id/city_input"
+                android:layout_width="wrap_content"
+                android:textSize="@dimen/profile_edit_quiz_items"
+                android:hint="City, State"
+                android:layout_height="match_parent"
+                android:inputType="text"></EditText>
+        </LinearLayout>
+
+    </LinearLayout>
+
 
 </androidx.core.widget.NestedScrollView>

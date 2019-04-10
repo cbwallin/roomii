@@ -23,7 +23,6 @@
             android:parentActivityName=".MainActivity"
             android:theme="@style/AppTheme.NoActionBar"
             android:launchMode="singleTop"
-            android:exported="true"
             >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"

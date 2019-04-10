@@ -30,6 +30,15 @@
                 app:layout_collapseMode="pin"
                 app:popupTheme="@style/AppTheme.Dark" />
 
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_gravity="right|center"
+                android:contentDescription="ProfilePicture"
+                app:layout_collapseMode="parallax"
+                app:srcCompat="@drawable/profilepic" />
+
         </com.google.android.material.appbar.CollapsingToolbarLayout>
     </com.google.android.material.appbar.AppBarLayout>
 
