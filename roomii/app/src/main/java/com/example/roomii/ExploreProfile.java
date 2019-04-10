@@ -2,18 +2,24 @@ package com.example.roomii;
 
 public class ExploreProfile {
     private String name;
-    private String profilePicPath;
+    private int image;
+    private String shortdesc;
 
-    public ExploreProfile(String name, String profilePicPath) {
+    public ExploreProfile(String name, int image, String shortdesc) {
         this.name = name;
-        this.profilePicPath = profilePicPath;
+        this.image = image;
+        this.shortdesc = shortdesc;
     }
 
     public String getName() {
         return name;
     }
 
-    public String getProfPic() {
-        return profilePicPath;
+    public int getImage() {
+        return image;
+    }
+
+    public String getShortdesc() {
+        return shortdesc;
     }
 }
