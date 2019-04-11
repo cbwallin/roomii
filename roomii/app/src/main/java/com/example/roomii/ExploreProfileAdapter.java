@@ -46,6 +46,7 @@ public class ExploreProfileAdapter extends RecyclerView.Adapter<ExploreProfileAd
         holder.textViewTitle.setText(profile.getName());
         holder.textViewShortDesc.setText(profile.getShortdesc());
         holder.imageView.setImageDrawable(mCtx.getResources().getDrawable(profile.getImage()));
+        holder.textViewMatchPercent.setText(Integer.toString(profile.getMatchPercent()) + "% match");
 
     }
 
@@ -58,7 +59,7 @@ public class ExploreProfileAdapter extends RecyclerView.Adapter<ExploreProfileAd
 
     class ProfileViewHolder extends RecyclerView.ViewHolder {
 
-        TextView textViewTitle, textViewShortDesc;
+        TextView textViewTitle, textViewShortDesc, textViewMatchPercent;
         ImageView imageView;
 
         public ProfileViewHolder(View itemView) {
@@ -67,6 +68,7 @@ public class ExploreProfileAdapter extends RecyclerView.Adapter<ExploreProfileAd
             textViewTitle = itemView.findViewById(R.id.textViewTitle);
             textViewShortDesc = itemView.findViewById(R.id.textViewShortDesc);
             imageView = itemView.findViewById(R.id.imageView);
+            textViewMatchPercent = itemView.findViewById(R.id.textViewMatchPercent);
         }
     }
 }
