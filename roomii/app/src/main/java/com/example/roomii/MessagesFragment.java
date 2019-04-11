@@ -24,8 +24,19 @@ public class MessagesFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_messages, container, false);
         lv = view.findViewById(R.id.listView1);
 
+
         adapter = new MessagesArrayAdapter(getActivity(), R.layout.listitem_message);
         lv.setAdapter(adapter);
+
+        addItems("hello ?");
+        addSends("stop");
+        addSends("i dont want to talk to u");
+
+
+        String val = getActivity().getIntent().getExtras().getString("key");
+        if (val == "value") {
+            Log.d("HERE", "here");
+        }
 
         editText1 = (EditText)view.findViewById(R.id.chatText);
         editText1.setOnKeyListener(new View.OnKeyListener() {
@@ -61,8 +72,7 @@ public class MessagesFragment extends Fragment {
     private void receiveMessage(){
         String msg = editText1.getText().toString();
         Log.d("MESSAGE", msg);
-        addItems(msg);
-        //new ChatDAO().receiveMessage("");
+        addSends(msg);
     }
 
 
@@ -70,6 +80,7 @@ public class MessagesFragment extends Fragment {
     private void addItems(String msg) {
         adapter.add(new OneComment(true, msg));
     }
+    private void addSends(String msg) { adapter.add(new OneComment(false, msg)); }
 
 }
 

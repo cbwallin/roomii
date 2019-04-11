@@ -16,7 +16,8 @@ import java.util.List;
 
 public class MessagesArrayAdapter extends ArrayAdapter<OneComment> {
 
-    private TextView countryName;
+    private TextView in_comment;
+    private TextView out_comment;
     private List<OneComment> countries = new ArrayList<OneComment>();
     private LinearLayout wrapper;
 
@@ -29,7 +30,6 @@ public class MessagesArrayAdapter extends ArrayAdapter<OneComment> {
         countries.add(object);
         super.add(object);
     }
-
 
 
     public int getCount() {
@@ -51,9 +51,9 @@ public class MessagesArrayAdapter extends ArrayAdapter<OneComment> {
 
         OneComment coment = getItem(position);
 
-        countryName = (TextView) row.findViewById(R.id.comment);
+        in_comment = (TextView) row.findViewById(R.id.in_comment);
 
-        countryName.setText(coment.comment);
+        in_comment.setText(coment.comment);
 
         wrapper.setGravity(coment.left ? Gravity.LEFT : Gravity.RIGHT);
 
