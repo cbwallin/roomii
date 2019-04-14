@@ -1,8 +1,6 @@
 package com.example.roomii;
 
 import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,11 +12,10 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MessagesArrayAdapter extends ArrayAdapter<OneComment> {
+public class MessagesArrayAdapter extends ArrayAdapter<Message> {
 
     private TextView in_comment;
-    private TextView out_comment;
-    private List<OneComment> countries = new ArrayList<OneComment>();
+    private List<Message> messages = new ArrayList<Message>();
     private LinearLayout wrapper;
 
     public MessagesArrayAdapter(Context context, int resource) {
@@ -26,18 +23,17 @@ public class MessagesArrayAdapter extends ArrayAdapter<OneComment> {
     }
 
     @Override
-    public void add(OneComment object) {
-        countries.add(object);
+    public void add(Message object) {
+        messages.add(object);
         super.add(object);
     }
 
-
     public int getCount() {
-        return this.countries.size();
+        return this.messages.size();
     }
 
-    public OneComment getItem(int index) {
-        return this.countries.get(index);
+    public Message getItem(int index) {
+        return this.messages.get(index);
     }
 
     public View getView(int position, View convertView, ViewGroup parent) {
@@ -49,21 +45,16 @@ public class MessagesArrayAdapter extends ArrayAdapter<OneComment> {
 
         wrapper = (LinearLayout) row.findViewById(R.id.wrapper);
 
-        OneComment coment = getItem(position);
+        Message message = getItem(position);
 
         in_comment = (TextView) row.findViewById(R.id.in_comment);
 
-        in_comment.setText(coment.comment);
-        in_comment.setTextColor(coment.left_side ? in_comment.getResources().getColor(R.color.black) : in_comment.getResources().getColor(R.color.white));
-        in_comment.setBackgroundResource(coment.left_side ? R.drawable.speech_bubble : R.drawable.speech_bubble_out);
+        in_comment.setText(message.comment);
+        in_comment.setTextColor(message.left_side ? in_comment.getResources().getColor(R.color.black) : in_comment.getResources().getColor(R.color.white));
+        in_comment.setBackgroundResource(message.left_side ? R.drawable.speech_bubble : R.drawable.speech_bubble_out);
 
-        wrapper.setGravity(coment.left_side ? Gravity.LEFT : Gravity.RIGHT);
+        wrapper.setGravity(message.left_side ? Gravity.LEFT : Gravity.RIGHT);
 
         return row;
     }
-
-    public Bitmap decodeToBitmap(byte[] decodedByte) {
-        return BitmapFactory.decodeByteArray(decodedByte, 0, decodedByte.length);
-    }
-
 }

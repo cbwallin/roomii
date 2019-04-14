@@ -17,24 +17,20 @@ import androidx.fragment.app.Fragment;
 
 public class MessageListFragment extends Fragment {
 
-    private MessagesArrayAdapter adapter;
     private ListView lv;
-    private ListView lv2;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_message_list, container, false);
         lv = view.findViewById(R.id.listView2);
 
-        //this.ivPic1 = (ImageView) view.findViewById(R.id.ivPic1);
-
         List<HashMap<String, String>> aList = new ArrayList<HashMap<String, String>>();
 
         int[] images = new int[]{
-                R.drawable.smaller_image,
-                R.drawable.smaller_image,
-                R.drawable.smaller_image,
-                R.drawable.smaller_image
+                R.drawable.adeeb,
+                R.drawable.cole,
+                R.drawable.kennedy,
+                R.drawable.zach
         };
 
         String[] names = new String[]{
@@ -67,21 +63,12 @@ public class MessageListFragment extends Fragment {
             aList.add(hm);
 
         }
-        //adapter = new MessagesArrayAdapter(getActivity(), R.layout.listitem_message);
 
         String[] from = { "img", "name", "txt", "date" };
 
-        // Ids of views in listview_layout
         int[] to = { R.id.messages_profile_pic, R.id.messages_name, R.id.messages_txt, R.id.messages_date };
 
-        // Instantiating an adapter to store each items
-        // R.layout.listview_layout defines the layout of each item
-        SimpleAdapter adapter = new SimpleAdapter(getActivity(), aList, R.layout.listview_layout, from, to);
-
-        // Getting a reference to listview of main.xml layout file
-        //ListView listView = ( ListView ) findViewById(R.id.listview);
-
-        // Setting the adapter to the listView
+        SimpleAdapter adapter = new SimpleAdapter(getActivity(), aList, R.layout.message_listview_layout, from, to);
 
         lv.setAdapter(adapter);
 
@@ -111,22 +98,6 @@ public class MessageListFragment extends Fragment {
             }
         });
 
-
         return  view;
     }
-
-
-
-
-    private void receiveMessage(){
-        //new ChatDAO().receiveMessage("");
-    }
-
-
-    /** recebe msg */
-    private void addItems(String msg) {
-        adapter.add(new OneComment(true, msg));
-    }
-
-
 }
