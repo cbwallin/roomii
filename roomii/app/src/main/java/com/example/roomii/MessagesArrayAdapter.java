@@ -54,6 +54,8 @@ public class MessagesArrayAdapter extends ArrayAdapter<OneComment> {
         in_comment = (TextView) row.findViewById(R.id.in_comment);
 
         in_comment.setText(coment.comment);
+        in_comment.setTextColor(coment.left ? in_comment.getResources().getColor(R.color.black) : in_comment.getResources().getColor(R.color.white));
+        in_comment.setBackgroundResource(coment.left ? R.drawable.speech_bubble : R.drawable.speech_bubble_out);
 
         wrapper.setGravity(coment.left ? Gravity.LEFT : Gravity.RIGHT);
 

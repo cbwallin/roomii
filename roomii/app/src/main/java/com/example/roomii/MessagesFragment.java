@@ -24,18 +24,29 @@ public class MessagesFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_messages, container, false);
         lv = view.findViewById(R.id.listView1);
 
-
         adapter = new MessagesArrayAdapter(getActivity(), R.layout.listitem_message);
         lv.setAdapter(adapter);
 
-        addItems("hello ?");
-        addSends("stop");
-        addSends("i dont want to talk to u");
-
-
         String val = getActivity().getIntent().getExtras().getString("key");
-        if (val == "value") {
-            Log.d("HERE", "here");
+        if (val == "cole") {
+            addItems("hello ?");
+            addSends("hey! what's up?");
+            addItems("not much just looking for roommates");
+        } else if (val == "adeeb") {
+            addSends("hey");
+            addItems("hey");
+            addSends("you need a roommate?");
+            addItems("yea I've been looking");
+        } else if (val == "kennedy") {
+            addItems("hey");
+            addItems("hey");
+            addItems("hey what's up");
+            addItems("fine");
+        } else {
+            addSends("hey hey");
+            addSends("i'm looking for a clean roommate!");
+            addSends("would you consider yourself a clean person?");
+            addItems("yeah I think so!");
         }
 
         editText1 = (EditText)view.findViewById(R.id.chatText);
