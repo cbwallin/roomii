@@ -1,6 +1,5 @@
 package com.example.roomii;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 
@@ -22,6 +21,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
 
         Intent intent = new Intent(this, LoginActivity.class);
         startActivity(intent);
+
         loadFragment(new ExploreFragment());
 
     }
