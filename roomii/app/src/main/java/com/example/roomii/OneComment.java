@@ -1,11 +1,11 @@
 package com.example.roomii;
 
 public class OneComment {
-    public boolean left;
+    public boolean left_side;
     public String comment;
 
     public OneComment(boolean b, String s) {
-        left = b;
+        left_side = b;
         comment = s;
     }
 }
