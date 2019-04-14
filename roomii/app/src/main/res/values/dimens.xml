@@ -5,8 +5,4 @@
     <dimen name="app_bar_height">180dp</dimen>
     <dimen name="fab_margin">16dp</dimen>
     <dimen name="text_margin">16dp</dimen>
-
-    <dimen name="profile_edit_text_section_heading_size">36sp</dimen>
-    <dimen name="profile_edit_text_option_heading_size">24sp</dimen>
-    <dimen name="profile_edit_quiz_items">16sp</dimen>
 </resources>
