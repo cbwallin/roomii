@@ -34,13 +34,15 @@ public class ProfileFragment extends Fragment {
         switch (item.getItemId()) {
 
             case R.id.edit:
+                Intent e = new Intent(getActivity(), ProfileEditActivity.class);
+                startActivity(e);
                 return true;
             case R.id.logout:
-                Intent i = new Intent(getActivity(),
-                        LoginActivity.class);
+                Intent i = new Intent(getActivity(), LoginActivity.class);
                 i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK |
                         Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 startActivity(i);
+                getActivity().finish();
                 return true;
         }
         return false;
