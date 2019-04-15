@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
                 break;
 
             case R.id.navigation_messages:
-                fragment = new MessagesFragment();
+                fragment = new MessageListFragment();
                 break;
 
             case R.id.navigation_profile:
