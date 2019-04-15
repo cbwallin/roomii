@@ -11,7 +11,7 @@ import java.util.List;
 
 import androidx.recyclerview.widget.RecyclerView;
 
-public class ExploreProfileAdapter extends RecyclerView.Adapter<ExploreProfileAdapter.ProfileViewHolder> {
+public class FavoritesAdapter extends RecyclerView.Adapter<FavoritesAdapter.ProfileViewHolder> {
 
 
     //this context we will use to inflate the layout
@@ -21,7 +21,7 @@ public class ExploreProfileAdapter extends RecyclerView.Adapter<ExploreProfileAd
     private List<Profile> profileList;
 
     //getting the context and product list with constructor
-    public ExploreProfileAdapter(Context mCtx, List<Profile> productList) {
+    public FavoritesAdapter(Context mCtx, List<Profile> productList) {
         this.mCtx = mCtx;
         this.profileList = productList;
     }

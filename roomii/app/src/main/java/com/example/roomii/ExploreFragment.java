@@ -18,7 +18,7 @@ import androidx.recyclerview.widget.RecyclerView;
 public class ExploreFragment extends Fragment {
 
     //a list to store all the products
-    List<ExploreProfile> profileList;
+    List<Profile> profileList;
 
     // THe recycler view
     RecyclerView recyclerView;
@@ -31,7 +31,7 @@ public class ExploreFragment extends Fragment {
 
         View rootView =  inflater.inflate(R.layout.fragment_explore, null);
         //getting a reference to the recycler view
-        recyclerView = (RecyclerView) rootView.findViewById(R.id.recyclerView);
+        recyclerView = rootView.findViewById(R.id.recyclerView);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 
@@ -41,38 +41,38 @@ public class ExploreFragment extends Fragment {
 
         //adding some items to our list
         profileList.add(
-                new ExploreProfile(
+                new Profile(
                         "Amazing Amanda",
                         R.drawable.amanda,
                         "I cook banana break every day to make sure all my roomiis are never hungry and always happy!",
                         99));
         profileList.add(
-                new ExploreProfile(
+                new Profile(
                         "Cole Wallin",
                         R.drawable.cole,
                         "I'm a quiet person who likes to study all the time and go to bed early!",
                         90));
 
         profileList.add(
-                new ExploreProfile(
+                new Profile(
                         "Zachary Trosvig",
                         R.drawable.zach,
                         "I'm a studious person but I am known to occasionally blast music out my front windows!",
                         85));
         profileList.add(
-                new ExploreProfile(
+                new Profile(
                         "Adeeb Ali",
                         R.drawable.adeeb,
                         "It's a rare night that I'm not up til 4am watching Twitch streams!",
                         77));
         profileList.add(
-                new ExploreProfile(
+                new Profile(
                         "Kennedy Mindermann",
                         R.drawable.kennedy,
                         "I'm a great roommii as long as I've had my coffee first!",
                         64));
         profileList.add(
-                new ExploreProfile(
+                new Profile(
                         "Let Down Larry",
                         R.drawable.larry,
                         "Seeking roomii willing to share a studio with me and my mom.",

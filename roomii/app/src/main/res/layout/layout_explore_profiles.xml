@@ -7,7 +7,7 @@
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="138dp"
+        android:layout_height="150dp"
         android:layout_margin="5dp">
 
         <RelativeLayout
@@ -61,6 +61,17 @@
                 android:text="48%"
                 android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
                 android:textColor="@color/colorPrimary"/>
+
+            <RadioButton
+                android:id="@+id/radioButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/imageView"
+                android:layout_marginTop="6dp"
+                android:checked="false"
+                android:clickable="true"
+                android:duplicateParentState="false"
+                android:text="Favorite" />
 
         </RelativeLayout>
 
