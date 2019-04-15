@@ -29,6 +29,8 @@
     <string name="party_habits">Party Habits</string>
     <string name="hobbies">Hobbies</string>
     <string name="desired_city">Desired City of Housing</string>
+    <string name="edit">Edit</string>
+    <string name="logout">Logout</string>
 
     <string-array name="gender_array">
         <item>Male</item>
