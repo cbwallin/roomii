@@ -16,8 +16,8 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-//        BottomNavigationView navigation = findViewById(R.id.navigation);
-//        navigation.setOnNavigationItemSelectedListener(this);
+        BottomNavigationView navigation = findViewById(R.id.navigation);
+        navigation.setOnNavigationItemSelectedListener(this);
         
         loadFragment(new ExploreFragment());
 
