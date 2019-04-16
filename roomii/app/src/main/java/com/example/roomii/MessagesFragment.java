@@ -79,7 +79,7 @@ public class MessagesFragment extends Fragment {
         btnSend.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (editText1.getText().toString().length() != 0) {
+                if (editText1.getText().toString().trim().length() != 0) {
                     if (editText1.getText().toString().charAt(0) == '\n') {
                         String msg = editText1.getText().toString().substring(1);
                         editText1.setText(msg);
