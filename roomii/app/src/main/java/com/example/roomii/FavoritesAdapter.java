@@ -30,7 +30,7 @@ public class FavoritesAdapter extends RecyclerView.Adapter<FavoritesAdapter.Prof
     public ProfileViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         //inflating and returning our view holder
         LayoutInflater inflater = LayoutInflater.from(mCtx);
-        View view = inflater.inflate(R.layout.layout_explore_profiles, null);
+        View view = inflater.inflate(R.layout.layout_favorite_profiles, null);
         return new ProfileViewHolder(view);
     }
 
@@ -44,6 +44,7 @@ public class FavoritesAdapter extends RecyclerView.Adapter<FavoritesAdapter.Prof
         holder.textViewShortDesc.setText(profile.getShortdesc());
         holder.imageView.setImageDrawable(mCtx.getResources().getDrawable(profile.getImage()));
         holder.textViewMatchPercent.setText(Integer.toString(profile.getMatchPercent()) + "% match");
+
 
     }
 
@@ -66,6 +67,7 @@ public class FavoritesAdapter extends RecyclerView.Adapter<FavoritesAdapter.Prof
             textViewShortDesc = itemView.findViewById(R.id.textViewShortDesc);
             imageView = itemView.findViewById(R.id.imageView);
             textViewMatchPercent = itemView.findViewById(R.id.textViewMatchPercent);
+
         }
     }
 }

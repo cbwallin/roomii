@@ -45,38 +45,61 @@ public class ExploreFragment extends Fragment {
                         "Amazing Amanda",
                         R.drawable.amanda,
                         "I cook banana break every day to make sure all my roomiis are never hungry and always happy!",
-                        99));
-        profileList.add(
-                new Profile(
-                        "Cole Wallin",
-                        R.drawable.cole,
-                        "I'm a quiet person who likes to study all the time and go to bed early!",
-                        90));
-
-        profileList.add(
-                new Profile(
-                        "Zachary Trosvig",
-                        R.drawable.zach,
-                        "I'm a studious person but I am known to occasionally blast music out my front windows!",
-                        85));
+                        99,
+                        21,
+                        "House",
+                        "Catholic",
+                        "18-24"));
         profileList.add(
                 new Profile(
                         "Adeeb Ali",
                         R.drawable.adeeb,
                         "It's a rare night that I'm not up til 4am watching Twitch streams!",
-                        77));
+                        77,
+                        22,
+                        "Apartment",
+                        "Muslim",
+                        "21-23"));
+        profileList.add(
+                new Profile(
+                        "Cole Wallin",
+                        R.drawable.cole,
+                        "I'm a quiet person who likes to study all the time and go to bed early!",
+                        90,
+                        23,
+                        "Apartment",
+                        "Pastafarian",
+                        "30+"));
         profileList.add(
                 new Profile(
                         "Kennedy Mindermann",
                         R.drawable.kennedy,
                         "I'm a great roommii as long as I've had my coffee first!",
-                        64));
+                        64,
+                        22,
+                        "Apartment",
+                        "Catholic",
+                        "22-26"));
+        profileList.add(
+                new Profile(
+                        "Zachary Trosvig",
+                        R.drawable.zach,
+                        "I'm a studious person but I am known to occasionally blast music out my front windows!",
+                        85,
+                        22,
+                        "Apartment",
+                        "Buddhist",
+                        "18-24"));
         profileList.add(
                 new Profile(
                         "Let Down Larry",
                         R.drawable.larry,
                         "Seeking roomii willing to share a studio with me and my mom.",
-                        12));
+                        12,
+                        20,
+                        "House",
+                        "Atheist",
+                        "18-24"));
 
 
         //creating recyclerview adapter

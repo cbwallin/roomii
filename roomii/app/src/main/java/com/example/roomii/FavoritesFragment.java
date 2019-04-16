@@ -40,17 +40,22 @@ public class FavoritesFragment extends Fragment {
         //adding some items to our list
         profileList.add(
                 new Profile(
-                        "Amazing Amanda",
-                        R.drawable.amanda,
-                        "I cook banana break every day to make sure all my roomiis are never hungry and always happy!",
-                        99));
+                        "Adeeb Ali",
+                        R.drawable.adeeb,
+                        "It's a rare night that I'm not up til 4am watching Twitch streams!",
+                        77));
         profileList.add(
                 new Profile(
                         "Cole Wallin",
                         R.drawable.cole,
                         "I'm a quiet person who likes to study all the time and go to bed early!",
                         90));
-
+        profileList.add(
+                new Profile(
+                        "Kennedy Mindermann",
+                        R.drawable.kennedy,
+                        "I'm a great roommii as long as I've had my coffee first!",
+                        64));
         profileList.add(
                 new Profile(
                         "Zachary Trosvig",

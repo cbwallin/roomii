@@ -2,6 +2,8 @@ package com.example.roomii;
 
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.RadioButton;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -15,7 +17,6 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         BottomNavigationView navigation = findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(this);
 
@@ -38,7 +39,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
 
         Fragment fragment = null;
-        switch(menuItem.getItemId()) {
+        switch (menuItem.getItemId()) {
             case R.id.navigation_explore:
                 fragment = new ExploreFragment();
                 break;

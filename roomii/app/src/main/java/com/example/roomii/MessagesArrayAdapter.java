@@ -58,3 +58,17 @@ public class MessagesArrayAdapter extends ArrayAdapter<Message> {
         return row;
     }
 }
+//itemView.setOnClickListener(this);
+//
+//    within the ProfileViewHolder constructor, then added the onclick function:
+//
+//    @Override
+//    public void onClick(View v) {
+//        AppCompatActivity activity = (AppCompatActivity) v.getContext();
+//        activity.getIntent().putExtra("key", "cole");
+//        MessagesFragment nextFrag = new MessagesFragment();
+//        activity.getSupportFragmentManager().beginTransaction()
+//                .replace(R.id.fragment_container, nextFrag, "findThisFragment")
+//                .addToBackStack(null)
+//                .commit();
+//    }

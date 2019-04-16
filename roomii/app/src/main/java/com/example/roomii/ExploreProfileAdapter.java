@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.RadioButton;
 import android.widget.TextView;
 
 import java.util.List;
@@ -44,6 +45,10 @@ public class ExploreProfileAdapter extends RecyclerView.Adapter<ExploreProfileAd
         holder.textViewShortDesc.setText(profile.getShortdesc());
         holder.imageView.setImageDrawable(mCtx.getResources().getDrawable(profile.getImage()));
         holder.textViewMatchPercent.setText(Integer.toString(profile.getMatchPercent()) + "% match");
+        holder.textViewAge.setText("Age: " + Integer.toString(profile.getAge()));
+        holder.textViewHousing.setText("Preferred housing: " + profile.getHousingPref());
+        holder.textViewReligion.setText("Religious Affiliation: " + profile.getReligiousAff());
+        holder.textViewAgePref.setText("Desired Age Range: " + profile.getAgePref());
 
     }
 
@@ -56,7 +61,7 @@ public class ExploreProfileAdapter extends RecyclerView.Adapter<ExploreProfileAd
 
     class ProfileViewHolder extends RecyclerView.ViewHolder {
 
-        TextView textViewTitle, textViewShortDesc, textViewMatchPercent;
+        TextView textViewTitle, textViewShortDesc, textViewMatchPercent, textViewAge, textViewHousing, textViewAgePref, textViewReligion;
         ImageView imageView;
 
         public ProfileViewHolder(View itemView) {
@@ -66,6 +71,11 @@ public class ExploreProfileAdapter extends RecyclerView.Adapter<ExploreProfileAd
             textViewShortDesc = itemView.findViewById(R.id.textViewShortDesc);
             imageView = itemView.findViewById(R.id.imageView);
             textViewMatchPercent = itemView.findViewById(R.id.textViewMatchPercent);
+            textViewAge = itemView.findViewById(R.id.textViewAge);
+            textViewHousing = itemView.findViewById(R.id.textViewHousing);
+            textViewAgePref= itemView.findViewById(R.id.textViewAgePref);
+            textViewReligion = itemView.findViewById(R.id.textViewReligion);
+
         }
     }
 }
