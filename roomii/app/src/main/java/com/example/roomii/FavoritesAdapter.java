@@ -5,14 +5,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.RadioButton;
 import android.widget.TextView;
 
 import java.util.List;
 
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
-public class ExploreProfileAdapter extends RecyclerView.Adapter<ExploreProfileAdapter.ProfileViewHolder> {
+public class FavoritesAdapter extends RecyclerView.Adapter<FavoritesAdapter.ProfileViewHolder> {
 
 
     //this context we will use to inflate the layout
@@ -22,7 +22,7 @@ public class ExploreProfileAdapter extends RecyclerView.Adapter<ExploreProfileAd
     private List<Profile> profileList;
 
     //getting the context and product list with constructor
-    public ExploreProfileAdapter(Context mCtx, List<Profile> productList) {
+    public FavoritesAdapter(Context mCtx, List<Profile> productList) {
         this.mCtx = mCtx;
         this.profileList = productList;
     }
@@ -31,7 +31,7 @@ public class ExploreProfileAdapter extends RecyclerView.Adapter<ExploreProfileAd
     public ProfileViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         //inflating and returning our view holder
         LayoutInflater inflater = LayoutInflater.from(mCtx);
-        View view = inflater.inflate(R.layout.layout_explore_profiles, null);
+        View view = inflater.inflate(R.layout.layout_favorite_profiles, null);
         return new ProfileViewHolder(view);
     }
 
@@ -45,10 +45,7 @@ public class ExploreProfileAdapter extends RecyclerView.Adapter<ExploreProfileAd
         holder.textViewShortDesc.setText(profile.getShortdesc());
         holder.imageView.setImageDrawable(mCtx.getResources().getDrawable(profile.getImage()));
         holder.textViewMatchPercent.setText(Integer.toString(profile.getMatchPercent()) + "% match");
-        holder.textViewAge.setText("Age: " + Integer.toString(profile.getAge()));
-        holder.textViewHousing.setText("Preferred housing: " + profile.getHousingPref());
-        holder.textViewReligion.setText("Religious Affiliation: " + profile.getReligiousAff());
-        holder.textViewAgePref.setText("Desired Age Range: " + profile.getAgePref());
+
 
     }
 
@@ -59,9 +56,9 @@ public class ExploreProfileAdapter extends RecyclerView.Adapter<ExploreProfileAd
     }
 
 
-    class ProfileViewHolder extends RecyclerView.ViewHolder {
+    class ProfileViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
-        TextView textViewTitle, textViewShortDesc, textViewMatchPercent, textViewAge, textViewHousing, textViewAgePref, textViewReligion;
+        TextView textViewTitle, textViewShortDesc, textViewMatchPercent;
         ImageView imageView;
 
         public ProfileViewHolder(View itemView) {
@@ -71,11 +68,34 @@ public class ExploreProfileAdapter extends RecyclerView.Adapter<ExploreProfileAd
             textViewShortDesc = itemView.findViewById(R.id.textViewShortDesc);
             imageView = itemView.findViewById(R.id.imageView);
             textViewMatchPercent = itemView.findViewById(R.id.textViewMatchPercent);
-            textViewAge = itemView.findViewById(R.id.textViewAge);
-            textViewHousing = itemView.findViewById(R.id.textViewHousing);
-            textViewAgePref= itemView.findViewById(R.id.textViewAgePref);
-            textViewReligion = itemView.findViewById(R.id.textViewReligion);
 
+            itemView.setOnClickListener(this);
+        }
+
+        @Override
+        public void onClick(View v) {
+            String val = "";
+            switch(this.getLayoutPosition()) {
+                case 0:
+                    val = "adeeb";
+                    break;
+                case 1:
+                    val = "cole";
+                    break;
+                case 2:
+                    val = "kennedy";
+                    break;
+                case 3:
+                    val = "zach";
+                    break;
+            }
+            AppCompatActivity activity = (AppCompatActivity) v.getContext();
+            activity.getIntent().putExtra("key", val);
+            MessagesFragment nextFrag = new MessagesFragment();
+            activity.getSupportFragmentManager().beginTransaction()
+                    .replace(R.id.fragment_container, nextFrag, "findThisFragment")
+                    .addToBackStack(null)
+                    .commit();
         }
     }
 }
