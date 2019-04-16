@@ -72,8 +72,10 @@ public class MessagesFragment extends Fragment {
         btnSend.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                receiveMessage();
-                editText1.setText("");
+                if (editText1.getText().toString().length() != 0) {
+                    receiveMessage();
+                    editText1.setText("");
+                }
             }
         });
 
