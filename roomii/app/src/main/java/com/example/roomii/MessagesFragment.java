@@ -60,9 +60,16 @@ public class MessagesFragment extends Fragment {
         editText1.setOnKeyListener(new View.OnKeyListener() {
             public boolean onKey(View v, int keyCode, KeyEvent event) {
                 if ((event.getAction() == KeyEvent.ACTION_DOWN) && (keyCode == KeyEvent.KEYCODE_ENTER)) {
-                    receiveMessage();
-                    editText1.setText("");
-                    return true;
+                    if (editText1.getText().toString().trim().length() != 0) {
+                        if (editText1.getText().toString().charAt(0) == '\n') {
+                            String msg = editText1.getText().toString().substring(1);
+                            editText1.setText(msg);
+                        }
+                        receiveMessage();
+                        editText1.getText().clear();
+                        return true;
+                    }
+                    editText1.getText().clear();
                 }
                 return false;
             }
@@ -73,6 +80,10 @@ public class MessagesFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 if (editText1.getText().toString().length() != 0) {
+                    if (editText1.getText().toString().charAt(0) == '\n') {
+                        String msg = editText1.getText().toString().substring(1);
+                        editText1.setText(msg);
+                    }
                     receiveMessage();
                     editText1.setText("");
                 }
