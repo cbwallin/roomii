@@ -84,11 +84,12 @@ public class MessagesFragment extends Fragment {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case android.R.id.home:
-                MessageListFragment nextFrag = new MessageListFragment();
+                getFragmentManager().popBackStackImmediate();
+                /*MessageListFragment nextFrag = new MessageListFragment();
                 getActivity().getSupportFragmentManager().beginTransaction()
                         .replace(R.id.fragment_container, nextFrag, "findThisFragment")
                         .addToBackStack(null)
-                        .commit();
+                        .commit();*/
                 break;
             default:
                 break;

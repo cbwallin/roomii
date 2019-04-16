@@ -9,6 +9,7 @@ import android.widget.TextView;
 
 import java.util.List;
 
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 public class FavoritesAdapter extends RecyclerView.Adapter<FavoritesAdapter.ProfileViewHolder> {
@@ -55,7 +56,7 @@ public class FavoritesAdapter extends RecyclerView.Adapter<FavoritesAdapter.Prof
     }
 
 
-    class ProfileViewHolder extends RecyclerView.ViewHolder {
+    class ProfileViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         TextView textViewTitle, textViewShortDesc, textViewMatchPercent;
         ImageView imageView;
@@ -68,6 +69,33 @@ public class FavoritesAdapter extends RecyclerView.Adapter<FavoritesAdapter.Prof
             imageView = itemView.findViewById(R.id.imageView);
             textViewMatchPercent = itemView.findViewById(R.id.textViewMatchPercent);
 
+            itemView.setOnClickListener(this);
+        }
+
+        @Override
+        public void onClick(View v) {
+            String val = "";
+            switch(this.getLayoutPosition()) {
+                case 0:
+                    val = "adeeb";
+                    break;
+                case 1:
+                    val = "cole";
+                    break;
+                case 2:
+                    val = "kennedy";
+                    break;
+                case 3:
+                    val = "zach";
+                    break;
+            }
+            AppCompatActivity activity = (AppCompatActivity) v.getContext();
+            activity.getIntent().putExtra("key", val);
+            MessagesFragment nextFrag = new MessagesFragment();
+            activity.getSupportFragmentManager().beginTransaction()
+                    .replace(R.id.fragment_container, nextFrag, "findThisFragment")
+                    .addToBackStack(null)
+                    .commit();
         }
     }
 }
